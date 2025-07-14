@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+        <div class="floating-heart" style="left:10%; animation-delay: 0s;"></div>
+        <div class="floating-heart" style="left:20%; animation-delay: 2s;"></div>
+        <div class="floating-heart" style="left:35%; animation-delay: 4s;"></div>
+        <div class="floating-heart" style="left:50%; animation-delay: 1s;"></div>
+        <div class="floating-heart" style="left:65%; animation-delay: 3s;"></div>
+        <div class="floating-heart" style="left:80%; animation-delay: 5s;"></div>
+        <div class="floating-heart" style="left:90%; animation-delay: 0.5s;"></div>
+    </div>
+    
+    <!-- Enhanced Heart Container -->
+    <div class="heart-container">
+        <div class="heart-spark spark1"></div>
+        <div class="heart-spark spark2"></div>
+        <div class="heart-spark spark3"></div>
+        <div class="heart-spark spark4"></div>
+        <div class="heart"></div>
+        <div class="heart-glow"></div>
+    </div>
+    
+    <div class="top-center-box">
+        <p class="love-text">
+           𝓗𝓪𝓹𝓹𝔂 𝓫𝓲𝓻𝓽𝓱𝓭𝓪𝔂
+        </p>
+        <a href="javascript:void(0)" class="video-btn" data-video="fatemeh.mp4">✨ Click my breath ✨</a>
+    </div>
+    
+    <div class="bottom-center-box">
+        <p class="loves-text">
+            𝐇𝐚𝐩𝐩𝐲 𝐛𝐢𝐫𝐭𝐡𝐝𝐚𝐲 𝐦𝐲 𝐦𝐨𝐨𝐧
+            <br/>
+             𝐀𝐥𝐰𝐚𝐲𝐬 𝐫𝐞𝐦𝐞𝐦𝐛𝐞𝐫 𝐭𝐡𝐞 𝐟𝐚𝐜𝐭 , 𝐓𝐡𝐚𝐭 𝐟𝐫𝐨𝐦 𝐭𝐡𝐞 𝐯𝐞𝐫𝐲 𝐝𝐢𝐬𝐭𝐚𝐧𝐭 𝐬𝐭𝐚𝐫𝐬 𝐭𝐨 𝐭𝐡𝐞 𝐜𝐥𝐨𝐬𝐞 𝐦𝐨𝐨𝐧
+            <br/>
+             𝐈 𝐥𝐨𝐯𝐞 𝐲𝐨𝐮 𝐭𝐡𝐞 𝐦𝐨𝐬𝐭
+
+            <br/>
+            𝐘𝐨𝐮𝐫 𝐬𝐦𝐢𝐥𝐞 , 𝐲𝐨𝐮𝐫 𝐬𝐨𝐮𝐧𝐝 , 𝐲𝐨𝐮𝐫 𝐞𝐲𝐞𝐬 , 𝐚𝐫𝐞 𝐭𝐡𝐞 𝐛𝐞𝐬𝐭 𝐟𝐞𝐞𝐥𝐢𝐧𝐠 𝐢𝐧 𝐭𝐡𝐞 𝐰𝐨𝐫𝐥𝐝
+            <br/>
+            𝓕𝓻𝓸𝓶: 𝓹𝓸𝓸𝔂𝓪𝓷❤️
+        </p>
+        <a href="poyan.JPG" target="_blank" title="Click to view image">💫 Click my moon 💫</a>
+    </div>
+
+    <!-- Custom Video Player -->
+    <div class="video-container">
+        <div class="video-wrapper">
+            <video class="custom-video" src="" preload="metadata"></video>
+            <div class="video-controls">
+                <button class="play-pause-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="timeline">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <button class="close-video">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Create additional floating hearts dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const floatingHearts = document.querySelector('.floating-hearts');
+            
+            // Add more floating hearts
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 6 + 's';
+                heart.style.opacity = Math.random() * 0.7;
+                heart.style.width = Math.random() * 8 + 5 + 'px';
+                heart.style.height = heart.style.width;
+                floatingHearts.appendChild(heart);
+            }
+            
+            // Heart beat effect
+            const heartElement = document.querySelector('.heart');
+            heartElement.addEventListener('click', function() {
+                heartElement.classList.add('heart-beat');
+                setTimeout(() => {
+                    heartElement.classList.remove('heart-beat');
+                }, 1000);
+            });
+            
+            // Video Player Functionality
+            const videoContainer = document.querySelector('.video-container');
+            const videoElement = document.querySelector('.custom-video');
+            const videoButtons = document.querySelectorAll('.video-btn');
+            const closeButton = document.querySelector('.close-video');
+            const playPauseBtn = document.querySelector('.play-pause-btn');
+            const playPauseIcon = playPauseBtn.querySelector('i');
+            const timeline = document.querySelector('.timeline');
+            const progress = document.querySelector('.progress');
+            
+            // Open video when clicking on video buttons
+            videoButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const videoSrc = this.getAttribute('data-video');
+                    videoElement.src = videoSrc;
+                    videoContainer.classList.add('active');
+                    videoElement.load();
+                    
+                    // Auto play when loaded
+                    videoElement.addEventListener('loadedmetadata', function() {
+                        videoElement.play();
+                        playPauseIcon.className = 'fas fa-pause';
+                    }, { once: true });
+                });
+            });
+            
+            // Close video
+            closeButton.addEventListener('click', function() {
+                videoContainer.classList.remove('active');
+                videoElement.pause();
+                videoElement.currentTime = 0;
+            });
+            
+            // Play/Pause functionality
+            playPauseBtn.addEventListener('click', function() {
+                if (videoElement.paused) {
+                    videoElement.play();
+                    playPauseIcon.className = 'fas fa-pause';
+                } else {
+                    videoElement.pause();
+                    playPauseIcon.className = 'fas fa-play';
+                }
+            });
+            
+            // Update progress bar
+            videoElement.addEventListener('timeupdate', function() {
+                const percent = (videoElement.currentTime / videoElement.duration) * 100;
+                progress.style.width = `${percent}%`;
+            });
+            
+            // Click on timeline to skip
+            timeline.addEventListener('click', function(e) {
+                const timelineWidth = this.clientWidth;
+                const clickPosition = e.offsetX;
+                const skipTo = (clickPosition / timelineWidth) * videoElement.duration;
+                videoElement.currentTime = skipTo;
+            });
+            
+            // Reset play button when video ends
+            videoElement.addEventListener('ended', function() {
+                playPauseIcon.className = 'fas fa-play';
+            });
+        });
+    </script>
+</body>
+</html>
